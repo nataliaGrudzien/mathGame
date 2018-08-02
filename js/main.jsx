@@ -1,3 +1,4 @@
+//dlaczego podświetlaja sie prawidłowe odpowiedzi?
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -35,6 +36,10 @@ class MathQuestionGame extends React.Component {
 			let falseResult = Math.floor(Math.random() * (100 + 9) - 9);
 			if (falseResult !== result) {
 				answer.push(<button key={i+1} onClick={event => {this.checkResult(event, falseResult)} }>{falseResult}</button>)
+			} else {
+				falseResult = Math.floor(Math.random() * (100 + 9) - 9);
+				answer.push(<button key={i+1} onClick={event => {this.checkResult(event, falseResult)} }>{falseResult}</button>);
+				console.log("podwojenie")
 			}
 		}
 		
@@ -62,8 +67,7 @@ class MathQuestionGame extends React.Component {
 
 	checkResult = (event, item) => {
 	  	
-	  	
-	  	if (item == this.state.goodAnswer) { 
+	  	if (item === this.state.goodAnswer) { 
 	  		this.setState({
 	  			ranNum1: '',
 	  			ranNum2: '',
