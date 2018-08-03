@@ -1,6 +1,8 @@
 //dlaczego podświetlaja sie prawidłowe odpowiedzi?
+import '../sass/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 
 class MathQuestionGame extends React.Component {
 	constructor(props) {
@@ -56,7 +58,7 @@ class MathQuestionGame extends React.Component {
 	componentDidMount(){	
 			
 	   	this.intervalId = setInterval(() => {
-	   		this.state.timer > 0 ? this.setState({ timer: this.state.timer-1 }) : this.setState({ msg: "Time is up! Game over!", ranNum1: '', ranNum2: '', operator: '' })
+	   		this.state.timer > 0 ? this.setState({ timer: this.state.timer-1 }) : this.setState({ msg: "Time is up!", ranNum1: '', ranNum2: '', operator: '' })
 	    }, 1000);
 	   	this.setMath();
 	} 
@@ -91,14 +93,18 @@ class MathQuestionGame extends React.Component {
 
 	render() {
 		return (
-			 <div>
-    			<h1>{this.state.ranNum1} {this.state.operator} {this.state.ranNum2} {this.state.msg}</h1>
-    			<div>
-    				{this.state.answers}
+			 <div className='mainDiv'>
+			 	<h1>Math game</h1>
+			 	<p>Add, multiply and divide. How fast are you when it comes to simple mathematical operations?</p>
+			 	<div className = 'innerDiv'>
+	    			<p>{this.state.ranNum1} {this.state.operator} {this.state.ranNum2} {this.state.msg}</p>
+	    			<div>
+	    				{this.state.answers}
 
-    				</div>
-    			<h3>Punkty: {this.state.counter}</h3>
-    			<h2>00:0{this.state.timer}</h2>
+	    				</div>
+	    			<p>Punkty: {this.state.counter}</p>
+	    			<p>00:0{this.state.timer}</p>
+    			</div>
 			</div>
 			);
 	}
