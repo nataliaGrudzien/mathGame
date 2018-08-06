@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto:100,400,700&subset=latin-ext');
 
-$mainColor: #0f222b;
-$sub-color: #FF9900;
+$mainColor: #173e43;
+$sub-color: #3fb0ac;
+$sub-color2: #fae596;
 
 $mainFontFamily: 'Roboto', sans-serif;
 $mainFontSize: 12px;
@@ -25,6 +26,10 @@ body {
 	font-weight: 100;
 	color: $sub-color;
 
+	& > p {
+		color: $sub-color2;
+	}
+
 }
 
 
@@ -44,7 +49,7 @@ body {
   text-align: center;
   font-size: $mainFontSize*1.6;
   color: $sub-color;
-  box-shadow: inset 0 0 0 1px rgba($sub-color, .5);
+  box-shadow: inset 0 0 0 1px rgba($sub-color2, .5);
 
   &::before,
   &::after {
@@ -67,4 +72,15 @@ body {
   25% {clip: rect(0px, $path-width, $clip-size, 0px); }
   50% {clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
   75% {clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
+}
+
+button {
+	font-size: 0.8em;
+	padding: 5px 10px;
+	margin: 1px;
+    font-weight: 100;
+    color: $mainColor;
+    background-color: $sub-color2;
+    cursor: pointer;
+    border: none;
 }

@@ -102,7 +102,7 @@ class MathQuestionGame extends React.Component {
 	    				{this.state.answers}
 
 	    				</div>
-	    			<p>Punkty: {this.state.counter}</p>
+	    			<p>points: {this.state.counter}</p>
 	    			<p>00:0{this.state.timer}</p>
     			</div>
 			</div>
